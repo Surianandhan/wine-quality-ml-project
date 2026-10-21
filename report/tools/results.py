@@ -21,7 +21,7 @@ DATA = ROOT / "report" / "data"
 
 # Links of the deployed application and the repository. Filled in after deployment.
 APP_URL = None
-REPO_URL = None
+REPO_URL = "https://github.com/Surianandhan/wine-quality-ml-project"
 
 CLASSES = [3, 4, 5, 6, 7, 8]
 FEATURES = C.FEATURE_COLUMNS
