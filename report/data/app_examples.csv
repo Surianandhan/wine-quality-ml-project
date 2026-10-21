@@ -1,0 +1,7 @@
+example,alcohol,volatile acidity,sulphates,rf_grade,rf_prob,smote_grade,smote_prob
+Typical wine (median of all wines),10.2,0.52,0.62,6,50.3,6,53.0
+Typical grade-4 wine,10.0,0.67,0.56,5,64.0,5,41.3
+Typical grade-5 wine,9.7,0.58,0.58,5,52.7,5,44.7
+Typical grade-6 wine,10.5,0.49,0.64,6,51.3,6,47.0
+Typical grade-7 wine,11.5,0.37,0.74,7,54.3,8,57.0
+Typical grade-8 wine,12.15,0.37,0.74,7,53.3,8,84.0

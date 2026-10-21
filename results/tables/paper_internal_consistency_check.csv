@@ -1,0 +1,10 @@
+quantity,value
+weight_sum_total,1.0
+max_abs_deviation_from_uniform_weight,0.053
+best_single_base_learner_pct,80.71
+weighted_average_of_base_accuracies_pct,67.52
+paper_reported_ensemble_pct,89.73
+gap_vs_weighted_average_pct_points,22.21
+gap_vs_best_base_learner_pct_points,9.02
+our_ensemble_pct,69.01
+our_gap_vs_their_weighted_average_pct_points,1.49

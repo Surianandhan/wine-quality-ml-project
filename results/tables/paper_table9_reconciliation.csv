@@ -1,0 +1,10 @@
+quantity,value
+implied_test_set_size,491
+full_dataset_size,1599
+implied_fraction_of_dataset_pct,30.71
+correct_predictions_on_diagonal,403
+implied_overall_accuracy_pct,82.08
+paper_reported_overall_accuracy_pct,89.73
+discrepancy_pct_points,7.65
+n_per_class_matching_column_wise,4
+literature_accuracy_range_pct,62.0-72.0

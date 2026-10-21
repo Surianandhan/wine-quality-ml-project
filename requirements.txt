@@ -1,0 +1,22 @@
+# Python 3.11.15
+# Exact versions used to develop and run this project (pip freeze, direct
+# dependencies only -- transitive deps such as joblib/threadpoolctl/fonttools
+# are pulled in automatically by pip).
+
+# --- Required for the reproduction (python run_all.py) ---
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0
+matplotlib==3.11.1
+
+# --- Review 2 (run_all.py --review2): SMOTE oversampling ---
+# 0.12.x fails to import against scikit-learn 1.9 (it uses a removed private
+# API); 0.14.2 is the version verified to work. sklearn-compat is its own shim.
+imbalanced-learn==0.14.2
+sklearn-compat==0.1.6
+
+# --- Only needed for the optional extension (run_all.py --with-novelty) ---
+seaborn==0.13.2      # cluster-quality heatmap
+mlxtend==0.25.0      # fpgrowth / association_rules
+tabulate==0.10.0     # DataFrame.to_markdown for the mined-rules table

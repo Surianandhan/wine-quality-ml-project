@@ -1,0 +1,39 @@
+# Scratch outputs from notebooks/reproduction_walkthrough.ipynb.
+# The notebook runs a reduced 2-repeat protocol and writes here so it can never
+# overwrite the canonical 10-repeat results in results/ that the README and
+# report quote. Regenerated on every notebook run.
+notebooks/_scratch_outputs/
+
+# Same idea for `python run_all.py --quick`: a reduced 2-repeat protocol whose
+# output must never be mistaken for, or overwrite, the canonical results.
+results/_quick_run/
+
+# Deck build dependency
+presentation/node_modules/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# The base paper is a copyrighted article (a licensed personal copy). Never
+# publish it in a public repository -- cite it instead.
+paper/*.pdf
+
+# Tool caches and local secrets
+.ruff_cache/
+.streamlit/secrets.toml
+
+# Page-number preview renders of the report and paper (rebuilt by --pages / --render)
+report/data/*_render.pdf
+
+# Kept locally, not published: the review decks and personal briefing notes, and the
+# generated report and paper (rebuilt from report/ by build_report.py / build_paper.py).
+presentation/
+report/*.docx
+report/*.pdf

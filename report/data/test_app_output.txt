@@ -1,0 +1,22 @@
+1. every page renders
+  PASS  page renders: page_overview
+  PASS  page renders: page_dataset
+  PASS  page renders: page_reproduction
+  PASS  page renders: page_balancing
+  PASS  page renders: page_improvement
+  PASS  page renders: page_importance
+  PASS  page renders: page_predict
+2. models match the project's settings
+  PASS  Random Forest = Review-1 RF (identical predictions)
+  PASS  RF + SMOTE = Review-2 SMOTE RF (identical predictions)
+3. predictions are valid
+  PASS  Random Forest: probabilities sum to 1
+  PASS  Random Forest: predicted grades are real grades
+  PASS  Random Forest + SMOTE: probabilities sum to 1
+  PASS  Random Forest + SMOTE: predicted grades are real grades
+4. headline numbers match the result files
+  PASS  reproduction accuracy is 69.01
+  PASS  best macro-F1 model is RF + SMOTE
+
+ALL CHECKS PASSED
+exit 0

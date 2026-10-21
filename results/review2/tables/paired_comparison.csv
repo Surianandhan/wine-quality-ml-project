@@ -1,0 +1,13 @@
+model,compared_with,metric,mean_difference,sd_difference,repeats_won,repeats_tied,repeats,wilcoxon_p
+RF | SMOTE oversampling,Ensemble (paper weights) | Review 1 (SVM + RF only),macro_f1,3.96724,0.725765,10,0,10,0.001953
+RF | SMOTE oversampling,Ensemble (paper weights) | Review 1 (SVM + RF only),accuracy,-1.07567,0.727403,1,0,10,0.003906
+RF | SMOTE oversampling,RF | Review 1 (SVM + RF only),macro_f1,2.79988,0.636856,10,0,10,0.001953
+RF | SMOTE oversampling,RF | Review 1 (SVM + RF only),accuracy,-3.09569,0.592756,0,0,10,0.001953
+RF | SMOTE oversampling,Learned-temperature ensemble | SMOTE oversampling,macro_f1,0.01001,1.227974,4,0,10,0.845703
+RF | SMOTE oversampling,Learned-temperature ensemble | SMOTE oversampling,accuracy,1.30709,0.907442,9,0,10,0.005859
+Learned-temperature ensemble | Review 1 (SVM + RF only),Ensemble (paper weights) | Review 1 (SVM + RF only),macro_f1,1.16224,0.422487,10,0,10,0.001953
+Learned-temperature ensemble | Review 1 (SVM + RF only),Ensemble (paper weights) | Review 1 (SVM + RF only),accuracy,1.87617,0.426212,10,0,10,0.001953
+Learned-temperature ensemble | Review 1 (SVM + RF only),RF | Review 1 (SVM + RF only),macro_f1,-0.00512,0.325851,6,0,10,0.921875
+Learned-temperature ensemble | Review 1 (SVM + RF only),RF | Review 1 (SVM + RF only),accuracy,-0.14385,0.481769,4,2,10,0.4375
+RF | Review 1 (SVM + RF only),Ensemble (paper weights) | Review 1 (SVM + RF only),macro_f1,1.16736,0.248512,10,0,10,0.001953
+RF | Review 1 (SVM + RF only),Ensemble (paper weights) | Review 1 (SVM + RF only),accuracy,2.02002,0.336188,10,0,10,0.001953

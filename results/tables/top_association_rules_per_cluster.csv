@@ -1,0 +1,16 @@
+cluster,antecedents,consequents,support,confidence,lift
+0,"chlorides=Low, citric acid=Med, density=Low, residual sugar=Med, sulphates=Low, total sulfur dioxide=High",quality=High,0.06666666666666667,1.0,1.5
+0,"chlorides=Low, free sulfur dioxide=High, pH=Med, volatile acidity=Med",quality=High,0.06666666666666667,1.0,1.5
+0,"chlorides=Low, citric acid=Med, density=Med, volatile acidity=Med",quality=High,0.06666666666666667,1.0,1.5
+0,"alcohol=Med, chlorides=Low, citric acid=Med, volatile acidity=Med",quality=High,0.06666666666666667,1.0,1.5
+0,"chlorides=Low, citric acid=Med, free sulfur dioxide=High, volatile acidity=Med",quality=High,0.06666666666666667,1.0,1.5
+1,"alcohol=Med, density=High, fixed acidity=High, free sulfur dioxide=Low, residual sugar=High, sulphates=High",quality=High,0.05555555555555555,1.0,1.0746268656716418
+1,"chlorides=Low, citric acid=High, fixed acidity=High, pH=Low, residual sugar=Med, sulphates=High, volatile acidity=Low",quality=High,0.05555555555555555,1.0,1.0746268656716418
+1,"chlorides=Low, fixed acidity=High, free sulfur dioxide=Low, pH=Low, residual sugar=Med, volatile acidity=Low",quality=High,0.05555555555555555,1.0,1.0746268656716418
+1,"chlorides=Low, citric acid=High, free sulfur dioxide=Low, pH=Low, residual sugar=Med, volatile acidity=Low",quality=High,0.05555555555555555,1.0,1.0746268656716418
+1,"chlorides=Low, fixed acidity=High, free sulfur dioxide=Low, pH=Low, residual sugar=Med, sulphates=High",quality=High,0.05555555555555555,1.0,1.0746268656716418
+2,"citric acid=Med, density=Low, fixed acidity=Low, free sulfur dioxide=Med, residual sugar=Low, sulphates=High, volatile acidity=Low",quality=High,0.05660377358490566,1.0,1.6825396825396826
+2,"chlorides=Low, residual sugar=Med, sulphates=High",quality=High,0.0660377358490566,1.0,1.6825396825396826
+2,"residual sugar=Med, sulphates=High, volatile acidity=Med",quality=High,0.05660377358490566,1.0,1.6825396825396826
+2,"alcohol=High, chlorides=Low, density=Low, pH=High, residual sugar=Med, sulphates=High",quality=High,0.0660377358490566,1.0,1.6825396825396826
+2,"chlorides=Low, density=Low, pH=High, residual sugar=Med, sulphates=High",quality=High,0.0660377358490566,1.0,1.6825396825396826

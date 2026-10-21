@@ -1,0 +1,7 @@
+model,overall_accuracy_pct,rank
+RF,71.03189493433396,1
+Ensemble (hard vote),69.93120700437774,2
+Ensemble (soft vote),69.01188242651656,3
+GradBoost,67.66729205753596,4
+SVM,61.951219512195124,5
+MLP,61.350844277673545,6

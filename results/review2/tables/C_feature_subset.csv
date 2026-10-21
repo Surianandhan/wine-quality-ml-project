@@ -1,0 +1,9 @@
+subset,n_features,accuracy,balanced_accuracy,macro_f1,weighted_f1,recall_3,recall_4,recall_5,recall_6,recall_7,recall_8,features_most_often_chosen
+top 1 (chosen in-fold),1,28.9806,22.4651,18.5137,33.2597,6.0,15.4717,43.025,11.8182,41.809,16.6667,alcohol
+top 2 (chosen in-fold),2,58.9306,32.7937,32.6525,58.6198,0.0,9.2453,68.9574,57.3981,50.0503,11.1111,alcohol; volatile acidity
+top 3 (chosen in-fold),3,66.2539,35.378,36.771,64.8643,0.0,6.0377,77.8414,66.2226,51.0553,11.1111,volatile acidity; sulphates; alcohol
+top 4 (chosen in-fold),4,69.2745,36.8416,38.4589,67.8062,0.0,5.0943,80.1909,70.5799,53.5176,11.6667,volatile acidity; sulphates; alcohol; chlorides
+top 6 (chosen in-fold),6,70.2064,36.6754,38.3459,68.5492,0.0,2.4528,81.072,72.3511,53.0653,11.1111,volatile acidity; sulphates; alcohol; total sulfur dioxide; chlorides; density
+top 8 (chosen in-fold),8,70.788,36.462,38.2256,68.9546,0.0,0.566,81.6593,73.7774,51.6583,11.1111,volatile acidity; citric acid; chlorides; total sulfur dioxide; density; sulphates; alcohol; pH
+top 11 (chosen in-fold),11,71.0319,36.4048,38.0878,69.1199,0.0,0.0,81.9677,74.2947,51.0553,11.1111,fixed acidity; volatile acidity; citric acid; residual sugar; chlorides; free sulfur dioxide; total sulfur dioxide; density; pH; sulphates; alcohol
+Ma et al.'s 4 key attributes,4,67.5485,36.0587,37.6838,66.1203,0.0,4.717,78.1938,68.2602,54.0704,11.1111,alcohol; sulphates; volatile acidity; citric acid

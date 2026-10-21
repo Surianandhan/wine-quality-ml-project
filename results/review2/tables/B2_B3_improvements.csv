@@ -1,0 +1,9 @@
+model,kind,accuracy,balanced_accuracy,macro_f1,weighted_f1,recall_3,recall_4,recall_5,recall_6,recall_7,recall_8
+ExtraTrees,single learner,70.9694,36.4494,37.9276,69.145,0.0,0.3774,81.3216,74.7806,51.1055,11.1111
+HistGB,single learner,68.8931,36.8563,37.4754,67.6487,0.0,1.6981,79.0308,69.2947,59.4472,11.6667
+Paper weights: SVM + RF + ExtraTrees + HistGB,ensemble,70.788,36.9587,38.0358,69.0499,0.0,0.1887,82.0705,71.8495,56.5327,11.1111
+Stacked: paper's 4 learners (class-weighted),ensemble,70.9193,35.037,34.9608,68.9019,0.0,0.1887,81.9236,73.1348,54.9749,0.0
+"Stacked: paper's 4 learners, balanced combiner",ensemble,59.1995,50.0284,37.8162,63.9322,48.0,23.2075,68.0323,55.2351,52.3618,53.3333
+Stacked: SVM + RF + ExtraTrees + HistGB,ensemble,70.9318,34.9181,35.0197,68.9252,0.0,0.7547,81.6887,73.9498,53.1156,0.0
+Learned-temperature ensemble | Review 1 (SVM + RF only),ensemble,70.8881,36.58,38.0781,69.0336,0.0,0.3774,82.5698,72.7586,52.6633,11.1111
+Learned-temperature ensemble | SMOTE oversampling,ensemble,66.6291,42.4905,40.8654,67.0859,10.0,24.9057,76.2702,62.3824,65.8291,15.5556

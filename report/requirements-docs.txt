@@ -1,0 +1,7 @@
+# Only for rebuilding the report and the paper (report/build_report.py, build_paper.py).
+# The experiments and the web app do not need these.
+python-docx==1.2.0
+lxml
+pandas
+pillow
+# Also needed on the PATH: pandoc (equations); Pages on macOS for --pages / --render previews.

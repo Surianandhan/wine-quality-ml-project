@@ -1,0 +1,11 @@
+antecedents,consequents,support,confidence,lift
+"alcohol=High, citric acid=High, density=Low, fixed acidity=High, free sulfur dioxide=Low, total sulfur dioxide=Low, volatile acidity=Low",quality=High,0.05,1.0,1.2903225806451613
+"free sulfur dioxide=Low, residual sugar=High, sulphates=High, total sulfur dioxide=Low",quality=High,0.075,1.0,1.2903225806451613
+"citric acid=High, fixed acidity=High, residual sugar=High, total sulfur dioxide=Low, volatile acidity=Low",quality=High,0.05357142857142857,1.0,1.2903225806451613
+"fixed acidity=High, residual sugar=High, total sulfur dioxide=Low, volatile acidity=Low",quality=High,0.05357142857142857,1.0,1.2903225806451613
+"alcohol=High, citric acid=High, fixed acidity=High, free sulfur dioxide=Low, residual sugar=High, total sulfur dioxide=Low",quality=High,0.06428571428571428,1.0,1.2903225806451613
+"alcohol=High, fixed acidity=High, free sulfur dioxide=Low, residual sugar=High, total sulfur dioxide=Low",quality=High,0.06428571428571428,1.0,1.2903225806451613
+"citric acid=High, fixed acidity=High, free sulfur dioxide=Low, residual sugar=High, total sulfur dioxide=Low",quality=High,0.07142857142857142,1.0,1.2903225806451613
+"fixed acidity=High, free sulfur dioxide=Low, residual sugar=High, total sulfur dioxide=Low",quality=High,0.07142857142857142,1.0,1.2903225806451613
+"alcohol=High, citric acid=High, fixed acidity=High, residual sugar=High, total sulfur dioxide=Low",quality=High,0.07857142857142857,1.0,1.2903225806451613
+"alcohol=High, fixed acidity=High, residual sugar=High, total sulfur dioxide=Low",quality=High,0.07857142857142857,1.0,1.2903225806451613

@@ -1,0 +1,11 @@
+# Dependencies for the web app only (Streamlit Community Cloud reads this file
+# because it sits next to app/streamlit_app.py). Exact versions = the ones the
+# project's results were produced with. Choose Python 3.11 when deploying.
+streamlit==1.66.0
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0
+imbalanced-learn==0.14.2
+sklearn-compat==0.1.6
+matplotlib==3.11.1

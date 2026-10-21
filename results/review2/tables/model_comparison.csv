@@ -1,0 +1,29 @@
+rank_by_macro_f1,experiment,model,kind,accuracy,balanced_accuracy,macro_f1,weighted_f1,recall_3,recall_4,recall_5,recall_6,recall_7,recall_8
+1,A. class balancing,RF | SMOTE oversampling,single learner,67.9362,42.0651,40.9152,68.2179,4.0,21.8868,78.0029,64.185,65.4271,18.8889
+2,B. improvements,Learned-temperature ensemble | SMOTE oversampling,ensemble,66.6291,42.4905,40.8654,67.0859,10.0,24.9057,76.2702,62.3824,65.8291,15.5556
+3,A. class balancing,Ensemble (paper weights) | SMOTE oversampling,ensemble,63.8587,41.4448,39.3358,64.5435,10.0,26.4151,73.025,59.2006,64.4724,15.5556
+4,A. class balancing,"Ensemble (paper weights) | Class weights, all four",ensemble,68.4303,37.9382,38.7671,67.3502,0.0,7.7358,80.279,65.5329,61.8593,12.2222
+5,A. class balancing,RF | No balancing,single learner,70.8505,36.6979,38.1777,69.044,0.0,0.566,81.4537,73.5893,53.4673,11.1111
+6,A. class balancing,RF | Review 1 (SVM + RF only),single learner,71.0319,36.4048,38.0878,69.1199,0.0,0.0,81.9677,74.2947,51.0553,11.1111
+7,A. class balancing,"RF | Class weights, all four",single learner,71.0319,36.4048,38.0878,69.1199,0.0,0.0,81.9677,74.2947,51.0553,11.1111
+8,A. class balancing,GradBoost | SMOTE oversampling,single learner,63.4897,39.402,38.0808,63.9587,3.0,18.6792,73.0543,60.3135,59.6985,21.6667
+9,B. improvements,Learned-temperature ensemble | Review 1 (SVM + RF only),ensemble,70.8881,36.58,38.0781,69.0336,0.0,0.3774,82.5698,72.7586,52.6633,11.1111
+10,B. improvements,Paper weights: SVM + RF + ExtraTrees + HistGB,ensemble,70.788,36.9587,38.0358,69.0499,0.0,0.1887,82.0705,71.8495,56.5327,11.1111
+11,B. improvements,ExtraTrees,single learner,70.9694,36.4494,37.9276,69.145,0.0,0.3774,81.3216,74.7806,51.1055,11.1111
+12,B. improvements,"Stacked: paper's 4 learners, balanced combiner",ensemble,59.1995,50.0284,37.8162,63.9322,48.0,23.2075,68.0323,55.2351,52.3618,53.3333
+13,A. class balancing,"GradBoost | Class weights, all four",single learner,65.0532,37.9212,37.7756,64.6933,0.0,11.8868,74.1703,62.0533,65.5276,13.8889
+14,B. improvements,HistGB,single learner,68.8931,36.8563,37.4754,67.6487,0.0,1.6981,79.0308,69.2947,59.4472,11.6667
+15,A. class balancing,Ensemble (paper weights) | Review 1 (SVM + RF only),ensemble,69.0119,35.5184,36.9176,67.1682,0.0,0.566,81.6593,69.8746,49.8995,11.1111
+16,A. class balancing,GradBoost | No balancing,single learner,67.6673,35.6965,36.7212,66.4956,0.0,2.6415,78.4141,68.7461,53.2663,11.1111
+17,A. class balancing,GradBoost | Review 1 (SVM + RF only),single learner,67.6673,35.6965,36.7212,66.4956,0.0,2.6415,78.4141,68.7461,53.2663,11.1111
+18,A. class balancing,Ensemble (paper weights) | No balancing,ensemble,68.8243,35.2801,36.638,66.9589,0.0,0.1887,81.5272,69.8589,48.995,11.1111
+19,B. improvements,Stacked: SVM + RF + ExtraTrees + HistGB,ensemble,70.9318,34.9181,35.0197,68.9252,0.0,0.7547,81.6887,73.9498,53.1156,0.0
+20,B. improvements,Stacked: paper's 4 learners (class-weighted),ensemble,70.9193,35.037,34.9608,68.9019,0.0,0.1887,81.9236,73.1348,54.9749,0.0
+21,A. class balancing,SVM | SMOTE oversampling,single learner,54.803,38.9502,34.2366,56.8801,10.0,34.5283,63.1571,48.8245,56.0804,21.1111
+22,A. class balancing,MLP | SMOTE oversampling,single learner,54.8218,37.2553,34.2097,56.0505,13.0,24.9057,63.6417,48.5423,58.4422,15.0
+23,A. class balancing,MLP | No balancing,single learner,61.3508,29.7461,30.066,59.5019,2.0,0.9434,74.9927,61.395,39.1457,0.0
+24,A. class balancing,MLP | Review 1 (SVM + RF only),single learner,61.3508,29.7461,30.066,59.5019,2.0,0.9434,74.9927,61.395,39.1457,0.0
+25,A. class balancing,SVM | No balancing,single learner,62.4765,29.2787,29.3023,60.2058,0.0,0.0,77.9442,62.3511,35.3769,0.0
+26,A. class balancing,"MLP | Class weights, all four",single learner,44.5716,39.5517,28.9995,48.4361,37.0,36.0377,55.9471,34.5455,41.5578,32.2222
+27,A. class balancing,SVM | Review 1 (SVM + RF only),single learner,61.9512,27.9885,28.0141,59.2371,0.0,0.0,76.8135,65.1881,25.9296,0.0
+28,A. class balancing,"SVM | Class weights, all four",single learner,61.9512,27.9885,28.0141,59.2371,0.0,0.0,76.8135,65.1881,25.9296,0.0

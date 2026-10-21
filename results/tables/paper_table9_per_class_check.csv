@@ -1,0 +1,7 @@
+class,paper_reported_pct,recomputed_column_wise_pct,recomputed_row_wise_pct,column_wise_matches
+3,33.33,33.33,33.33,True
+4,63.16,63.16,54.55,True
+5,84.8,84.8,86.93,True
+6,88.06,88.5,87.62,True
+7,77.08,61.67,60.66,False
+8,50.0,60.0,75.0,False

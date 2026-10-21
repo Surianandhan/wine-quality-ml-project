@@ -1,0 +1,336 @@
+Loaded red wine dataset: 1599 rows, 11 features.
+Protocol: 10-fold stratified CV x 10 repeats (100 total fold-runs).
+
+========================================================================
+STEP 3: Base paper reproduction (classical-ML substitutions)
+========================================================================
+
+-- Model ranking (pooled over all repeats) --
+               model  overall_accuracy_pct  rank
+                  RF             71.031895     1
+Ensemble (hard vote)             69.931207     2
+Ensemble (soft vote)             69.011882     3
+           GradBoost             67.667292     4
+                 SVM             61.951220     5
+                 MLP             61.350844     6
+
+-- Per-class comparison vs. published benchmarks --
+  class  cortez_2009_pct  ma_2024_pct  our_reproduction_pct
+      3              0.0        33.33              0.000000
+      4             20.0        63.16              0.566038
+      5             67.5        84.80             81.659325
+      6             57.7        88.06             69.874608
+      7             58.6        77.08             49.899497
+      8              0.0        50.00             11.111111
+overall              NaN        89.73             69.011882
+
+-- Ensemble weights, and why they matter --
+  n_learners: 4
+  uniform_weight: 0.25
+  max_weight: 0.2697942857032431
+  min_weight: 0.23564251718195944
+  weight_spread: 0.034151768521283654
+  max_abs_deviation_from_uniform: 0.019794285703243097
+  (Weights close to uniform => the ensemble approximates a plain average
+   of its members, which lands between the strongest and weakest learner.)
+
+-- Reconciling the paper's reported 89.73% against its own Table 9 --
+                           quantity     value
+              implied_test_set_size       491
+                  full_dataset_size      1599
+    implied_fraction_of_dataset_pct     30.71
+    correct_predictions_on_diagonal       403
+       implied_overall_accuracy_pct     82.08
+paper_reported_overall_accuracy_pct     89.73
+             discrepancy_pct_points      7.65
+   n_per_class_matching_column_wise         4
+      literature_accuracy_range_pct 62.0-72.0
+
+  Per-class check (does their 'precision' reproduce column-wise?):
+ class  paper_reported_pct  recomputed_column_wise_pct  recomputed_row_wise_pct  column_wise_matches
+     3               33.33                       33.33                    33.33                 True
+     4               63.16                       63.16                    54.55                 True
+     5               84.80                       84.80                    86.93                 True
+     6               88.06                       88.50                    87.62                 True
+     7               77.08                       61.67                    60.66                False
+     8               50.00                       60.00                    75.00                False
+
+  CAVEAT: Table 9 was transcribed by eye from the printed PDF and may
+  contain reading errors. Reported as 'could not reconcile', not as a
+  claim that the paper is incorrect.
+
+-- Paper internal consistency: Table 8 weights x Tables 4-7 accuracies --
+                                    quantity  value
+                            weight_sum_total  1.000
+       max_abs_deviation_from_uniform_weight  0.053
+                best_single_base_learner_pct 80.710
+     weighted_average_of_base_accuracies_pct 67.520
+                 paper_reported_ensemble_pct 89.730
+          gap_vs_weighted_average_pct_points 22.210
+         gap_vs_best_base_learner_pct_points  9.020
+                            our_ensemble_pct 69.010
+our_gap_vs_their_weighted_average_pct_points  1.490
+
+========================================================================
+REVIEW 2: class balancing, improving the result, feature importance
+Primary metric, fixed before any Review-2 run: macro_f1
+========================================================================
+
+-- A. Class balancing (same four learners, paper's weighted soft vote) --
+  A. balancing = none
+    [none] repeat 1/10
+    [none] repeat 2/10
+    [none] repeat 3/10
+    [none] repeat 4/10
+    [none] repeat 5/10
+    [none] repeat 6/10
+    [none] repeat 7/10
+    [none] repeat 8/10
+    [none] repeat 9/10
+    [none] repeat 10/10
+  A. balancing = partial
+    [partial] repeat 1/10
+    [partial] repeat 2/10
+    [partial] repeat 3/10
+    [partial] repeat 4/10
+    [partial] repeat 5/10
+    [partial] repeat 6/10
+    [partial] repeat 7/10
+    [partial] repeat 8/10
+    [partial] repeat 9/10
+    [partial] repeat 10/10
+  A. balancing = class_weight
+    [class_weight] repeat 1/10
+    [class_weight] repeat 2/10
+    [class_weight] repeat 3/10
+    [class_weight] repeat 4/10
+    [class_weight] repeat 5/10
+    [class_weight] repeat 6/10
+    [class_weight] repeat 7/10
+    [class_weight] repeat 8/10
+    [class_weight] repeat 9/10
+    [class_weight] repeat 10/10
+  A. balancing = smote
+    [smote] repeat 1/10
+    [smote] repeat 2/10
+    [smote] repeat 3/10
+    [smote] repeat 4/10
+    [smote] repeat 5/10
+    [smote] repeat 6/10
+    [smote] repeat 7/10
+    [smote] repeat 8/10
+    [smote] repeat 9/10
+    [smote] repeat 10/10
+         balancing_label  accuracy  balanced_accuracy  macro_f1  recall_3  recall_4  recall_5  recall_6  recall_7  recall_8
+            No balancing     68.82              35.28     36.64       0.0      0.19     81.53     69.86     48.99     11.11
+Review 1 (SVM + RF only)     69.01              35.52     36.92       0.0      0.57     81.66     69.87     49.90     11.11
+ Class weights, all four     68.43              37.94     38.77       0.0      7.74     80.28     65.53     61.86     12.22
+      SMOTE oversampling     63.86              41.44     39.34      10.0     26.42     73.02     59.20     64.47     15.56
+
+  Regression check vs Review 1: 69.0118824265 vs 69.0118824265 -> MATCH
+
+  Best balancing scheme on macro_f1: SMOTE oversampling
+
+-- B1. Weight sharpening (diagnostic test of the Review-1 explanation) --
+balancing  sharpen  temperature  accuracy  macro_f1  rf_accuracy largest_weight_learner  largest_weight
+  partial     both            1    69.012    36.918       71.032                     RF           0.270
+  partial     both            2    69.199    37.025       71.032                     RF           0.291
+  partial     both            5    69.819    37.358       71.032                     RF           0.356
+  partial     both           10    70.594    37.930       71.032                     RF           0.448
+  partial     both           25    71.082    38.274       71.032                     RF           0.546
+  partial     both          100    70.407    37.851       71.032                     RF           0.523
+  partial accuracy            1    69.012    36.918       71.032                     RF           0.270
+  partial accuracy            2    69.218    37.025       71.032                     RF           0.293
+  partial accuracy            5    69.900    37.397       71.032                     RF           0.364
+  partial accuracy           10    70.782    37.991       71.032                     RF           0.466
+  partial accuracy           25    71.220    38.225       71.032                     RF           0.589
+  partial accuracy          100    71.226    38.270       71.032                     RF           0.623
+    smote     both            1    63.859    39.336       67.936                     RF           0.275
+    smote     both            2    64.415    39.731       67.936                     RF           0.302
+    smote     both            5    66.079    40.769       67.936                     RF           0.382
+    smote     both           10    67.042    41.359       67.936                     RF           0.480
+    smote     both           25    67.017    41.194       67.936                     RF           0.561
+    smote     both          100    65.091    39.895       67.936                     RF           0.519
+    smote accuracy            1    63.859    39.336       67.936                     RF           0.275
+    smote accuracy            2    64.447    39.732       67.936                     RF           0.303
+    smote accuracy            5    66.273    40.913       67.936                     RF           0.389
+    smote accuracy           10    67.192    41.457       67.936                     RF           0.495
+    smote accuracy           25    67.592    41.658       67.936                     RF           0.601
+    smote accuracy          100    67.724    41.697       67.936                     RF           0.623
+
+-- B2/B3. Stacking and stronger learners --
+  B3. stronger single learners
+    [strong singles] repeat 1/10
+    [strong singles] repeat 2/10
+    [strong singles] repeat 3/10
+    [strong singles] repeat 4/10
+    [strong singles] repeat 5/10
+    [strong singles] repeat 6/10
+    [strong singles] repeat 7/10
+    [strong singles] repeat 8/10
+    [strong singles] repeat 9/10
+    [strong singles] repeat 10/10
+  B2. Stacked: paper's 4 learners (class-weighted)
+    [stack] repeat 1/10
+    [stack] repeat 2/10
+    [stack] repeat 3/10
+    [stack] repeat 4/10
+    [stack] repeat 5/10
+    [stack] repeat 6/10
+    [stack] repeat 7/10
+    [stack] repeat 8/10
+    [stack] repeat 9/10
+    [stack] repeat 10/10
+  B2. Stacked: paper's 4 learners, balanced combiner
+    [stack] repeat 1/10
+    [stack] repeat 2/10
+    [stack] repeat 3/10
+    [stack] repeat 4/10
+    [stack] repeat 5/10
+    [stack] repeat 6/10
+    [stack] repeat 7/10
+    [stack] repeat 8/10
+    [stack] repeat 9/10
+    [stack] repeat 10/10
+  B2. Stacked: SVM + RF + ExtraTrees + HistGB
+    [stack] repeat 1/10
+    [stack] repeat 2/10
+    [stack] repeat 3/10
+    [stack] repeat 4/10
+    [stack] repeat 5/10
+    [stack] repeat 6/10
+    [stack] repeat 7/10
+    [stack] repeat 8/10
+    [stack] repeat 9/10
+    [stack] repeat 10/10
+  B4. learned-temperature ensemble (temperature chosen by inner CV)
+    [learned T, partial] repeat 1/10
+    [learned T, partial] repeat 2/10
+    [learned T, partial] repeat 3/10
+    [learned T, partial] repeat 4/10
+    [learned T, partial] repeat 5/10
+    [learned T, partial] repeat 6/10
+    [learned T, partial] repeat 7/10
+    [learned T, partial] repeat 8/10
+    [learned T, partial] repeat 9/10
+    [learned T, partial] repeat 10/10
+    [learned T, smote] repeat 1/10
+    [learned T, smote] repeat 2/10
+    [learned T, smote] repeat 3/10
+    [learned T, smote] repeat 4/10
+    [learned T, smote] repeat 5/10
+    [learned T, smote] repeat 6/10
+    [learned T, smote] repeat 7/10
+    [learned T, smote] repeat 8/10
+    [learned T, smote] repeat 9/10
+    [learned T, smote] repeat 10/10
+                                                  model  accuracy  balanced_accuracy  macro_f1  recall_3  recall_4  recall_5  recall_6  recall_7  recall_8
+                                             ExtraTrees     70.97              36.45     37.93       0.0      0.38     81.32     74.78     51.11     11.11
+                                                 HistGB     68.89              36.86     37.48       0.0      1.70     79.03     69.29     59.45     11.67
+          Paper weights: SVM + RF + ExtraTrees + HistGB     70.79              36.96     38.04       0.0      0.19     82.07     71.85     56.53     11.11
+           Stacked: paper's 4 learners (class-weighted)     70.92              35.04     34.96       0.0      0.19     81.92     73.13     54.97      0.00
+         Stacked: paper's 4 learners, balanced combiner     59.20              50.03     37.82      48.0     23.21     68.03     55.24     52.36     53.33
+                Stacked: SVM + RF + ExtraTrees + HistGB     70.93              34.92     35.02       0.0      0.75     81.69     73.95     53.12      0.00
+Learned-temperature ensemble | Review 1 (SVM + RF only)     70.89              36.58     38.08       0.0      0.38     82.57     72.76     52.66     11.11
+      Learned-temperature ensemble | SMOTE oversampling     66.63              42.49     40.87      10.0     24.91     76.27     62.38     65.83     15.56
+
+-- Paired comparison across the repeats (wins / Wilcoxon p; p is optimistic, see code) --
+                                                  model                                       compared_with   metric  mean_difference  sd_difference  repeats_won  repeats_tied  repeats  wilcoxon_p
+                                RF | SMOTE oversampling Ensemble (paper weights) | Review 1 (SVM + RF only) macro_f1           3.9673         0.7258           10             0       10      0.0020
+                                RF | SMOTE oversampling Ensemble (paper weights) | Review 1 (SVM + RF only) accuracy          -1.0757         0.7274            1             0       10      0.0039
+                                RF | SMOTE oversampling                       RF | Review 1 (SVM + RF only) macro_f1           2.7999         0.6369           10             0       10      0.0020
+                                RF | SMOTE oversampling                       RF | Review 1 (SVM + RF only) accuracy          -3.0957         0.5927            0             0       10      0.0020
+Learned-temperature ensemble | Review 1 (SVM + RF only) Ensemble (paper weights) | Review 1 (SVM + RF only) macro_f1           1.1623         0.4225           10             0       10      0.0020
+Learned-temperature ensemble | Review 1 (SVM + RF only) Ensemble (paper weights) | Review 1 (SVM + RF only) accuracy           1.8762         0.4262           10             0       10      0.0020
+Learned-temperature ensemble | Review 1 (SVM + RF only)                       RF | Review 1 (SVM + RF only) macro_f1          -0.0051         0.3259            6             0       10      0.9219
+Learned-temperature ensemble | Review 1 (SVM + RF only)                       RF | Review 1 (SVM + RF only) accuracy          -0.1438         0.4818            4             2       10      0.4375
+                          RF | Review 1 (SVM + RF only) Ensemble (paper weights) | Review 1 (SVM + RF only) macro_f1           1.1674         0.2485           10             0       10      0.0020
+                          RF | Review 1 (SVM + RF only) Ensemble (paper weights) | Review 1 (SVM + RF only) accuracy           2.0200         0.3362           10             0       10      0.0020
+
+-- Every candidate, ranked by macro_f1 (top 10) --
+                                                  model  accuracy  balanced_accuracy  macro_f1
+                                RF | SMOTE oversampling     67.94              42.07     40.92
+      Learned-temperature ensemble | SMOTE oversampling     66.63              42.49     40.87
+          Ensemble (paper weights) | SMOTE oversampling     63.86              41.44     39.34
+     Ensemble (paper weights) | Class weights, all four     68.43              37.94     38.77
+                                      RF | No balancing     70.85              36.70     38.18
+                          RF | Review 1 (SVM + RF only)     71.03              36.40     38.09
+                           RF | Class weights, all four     71.03              36.40     38.09
+                         GradBoost | SMOTE oversampling     63.49              39.40     38.08
+Learned-temperature ensemble | Review 1 (SVM + RF only)     70.89              36.58     38.08
+          Paper weights: SVM + RF + ExtraTrees + HistGB     70.79              36.96     38.04
+
+  Best on macro_f1: RF | SMOTE oversampling
+  Best on accuracy:  RF | Review 1 (SVM + RF only) (71.03%)
+
+-- Review 1 vs Review 2 --
+           metric  review1_ensemble  review1_random_forest  review2_best  change_vs_review1_ensemble
+         accuracy             69.01                  71.03         67.94                       -1.08
+balanced_accuracy             35.52                  36.40         42.07                        6.55
+         macro_f1             36.92                  38.09         40.92                        4.00
+      weighted_f1             67.17                  69.12         68.22                        1.05
+         recall_3              0.00                   0.00          4.00                        4.00
+         recall_4              0.57                   0.00         21.89                       21.32
+         recall_5             81.66                  81.97         78.00                       -3.66
+         recall_6             69.87                  74.29         64.18                       -5.69
+         recall_7             49.90                  51.06         65.43                       15.53
+         recall_8             11.11                  11.11         18.89                        7.78
+
+-- C. Feature importance --
+  C1. permutation importance -- best model: RF | SMOTE oversampling
+  C1. permutation importance -- Random Forest
+  C2. feature-subset curve
+    top-1 features
+    top-2 features
+    top-3 features
+    top-4 features
+    top-6 features
+    top-8 features
+    top-11 features
+    paper's four key attributes
+             feature  final_f1_drop  rf_f1_drop  rf_mdi  spearman_rho  rank_final
+             alcohol          7.451       8.481   0.135         0.479           1
+           sulphates          7.275       6.494   0.119         0.377           2
+    volatile acidity          4.438       4.856   0.129        -0.381           3
+           chlorides          2.331       1.047   0.094        -0.190           4
+total sulfur dioxide          1.656       2.273   0.090        -0.197           5
+         citric acid          0.556       1.388   0.079         0.213           6
+       fixed acidity         -0.129       0.336   0.068         0.114           7
+      residual sugar         -0.149       0.336   0.065         0.032           8
+             density         -0.498       0.672   0.085        -0.177           9
+                  pH         -0.586       0.919   0.076        -0.044          10
+ free sulfur dioxide         -1.160       1.062   0.062        -0.057          11
+
+  Ranking agreement between methods:
+                                  comparison  spearman_rank_agreement
+permutation (best model) vs permutation (RF)                    0.736
+        permutation (best model) vs MDI (RF)                    0.891
+                permutation (RF) vs MDI (RF)                    0.764
+
+  Ma et al.'s four key attributes in our ranking:
+ paper_attribute  our_rank_best_model  our_rank_rf  in_our_top4
+         alcohol                    1            1         True
+       sulphates                    2            2         True
+volatile acidity                    3            3         True
+     citric acid                    6            5        False
+
+  How many lab tests are needed:
+                      subset  accuracy  macro_f1                                                                                                                          features_most_often_chosen
+      top 1 (chosen in-fold)     28.98     18.51                                                                                                                                             alcohol
+      top 2 (chosen in-fold)     58.93     32.65                                                                                                                           alcohol; volatile acidity
+      top 3 (chosen in-fold)     66.25     36.77                                                                                                                volatile acidity; sulphates; alcohol
+      top 4 (chosen in-fold)     69.27     38.46                                                                                                     volatile acidity; sulphates; alcohol; chlorides
+      top 6 (chosen in-fold)     70.21     38.35                                                                      volatile acidity; sulphates; alcohol; total sulfur dioxide; chlorides; density
+      top 8 (chosen in-fold)     70.79     38.23                                                     volatile acidity; citric acid; chlorides; total sulfur dioxide; density; sulphates; alcohol; pH
+     top 11 (chosen in-fold)     71.03     38.09 fixed acidity; volatile acidity; citric acid; residual sugar; chlorides; free sulfur dioxide; total sulfur dioxide; density; pH; sulphates; alcohol
+Ma et al.'s 4 key attributes     67.55     37.68                                                                                                   alcohol; sulphates; volatile acidity; citric acid
+
+========================================================================
+DONE. Tables -> results/tables/ , figures -> results/figures/
+Review 2 -> /Users/AIRUS/Documents/ML Essentials/wine-quality-ml-project/results/review2
+(Step 4 extension skipped; pass --with-novelty to include it.)
+========================================================================
+real 30758.96
+user 24490.87
+sys 277.26
+EXIT CODE: 0

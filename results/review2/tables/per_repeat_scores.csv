@@ -1,0 +1,281 @@
+model,repeat,accuracy,balanced_accuracy,macro_f1
+SVM | No balancing,0,63.2896,29.6986,29.7257
+SVM | No balancing,1,62.6642,29.2744,29.3357
+SVM | No balancing,2,62.6016,29.4294,29.5163
+SVM | No balancing,3,61.8512,29.0616,28.9624
+SVM | No balancing,4,62.2889,29.2296,29.2041
+SVM | No balancing,5,62.5391,29.3967,29.4741
+SVM | No balancing,6,62.6016,29.3619,29.3941
+SVM | No balancing,7,62.6016,29.3142,29.3784
+SVM | No balancing,8,61.7261,28.7146,28.6913
+SVM | No balancing,9,62.6016,29.3059,29.3437
+RF | No balancing,0,71.6073,37.0192,38.4524
+RF | No balancing,1,70.9819,37.3477,38.966
+RF | No balancing,2,70.9193,36.9083,38.5903
+RF | No balancing,3,71.4196,37.117,38.589
+RF | No balancing,4,70.6692,36.3936,37.777
+RF | No balancing,5,70.8568,36.2974,37.7965
+RF | No balancing,6,70.7317,36.9945,38.6266
+RF | No balancing,7,70.6066,36.374,37.7217
+RF | No balancing,8,70.419,36.5871,37.9407
+RF | No balancing,9,70.2939,35.9404,37.2845
+MLP | No balancing,0,61.7886,29.4109,29.2896
+MLP | No balancing,1,60.2877,28.5963,28.4814
+MLP | No balancing,2,61.2258,30.9895,32.1231
+MLP | No balancing,3,61.0381,29.2012,29.1087
+MLP | No balancing,4,61.3508,29.4537,29.44
+MLP | No balancing,5,60.9756,29.0796,29.0283
+MLP | No balancing,6,62.1639,29.8346,30.0548
+MLP | No balancing,7,62.0388,31.5563,32.8743
+MLP | No balancing,8,61.2258,29.7457,29.8877
+MLP | No balancing,9,61.4134,29.5936,29.8243
+GradBoost | No balancing,0,67.7298,35.5464,36.4109
+GradBoost | No balancing,1,67.1044,35.9969,37.3637
+GradBoost | No balancing,2,67.4797,35.1124,35.7685
+GradBoost | No balancing,3,67.98,36.2356,37.5527
+GradBoost | No balancing,4,67.8549,36.2823,37.5496
+GradBoost | No balancing,5,68.0425,35.7247,37.0018
+GradBoost | No balancing,6,66.7917,35.5796,36.7386
+GradBoost | No balancing,7,68.7305,36.2971,37.4901
+GradBoost | No balancing,8,67.167,35.0921,35.7425
+GradBoost | No balancing,9,67.7924,35.0981,35.728
+Ensemble (paper weights) | No balancing,0,70.0438,35.5527,37.1465
+Ensemble (paper weights) | No balancing,1,68.2301,35.2745,36.8977
+Ensemble (paper weights) | No balancing,2,68.4803,35.0397,36.3153
+Ensemble (paper weights) | No balancing,3,68.9181,35.3246,36.7098
+Ensemble (paper weights) | No balancing,4,68.5428,35.0427,36.2722
+Ensemble (paper weights) | No balancing,5,70.1063,35.8588,37.3388
+Ensemble (paper weights) | No balancing,6,68.5428,35.2798,36.503
+Ensemble (paper weights) | No balancing,7,69.1682,35.6513,37.1204
+Ensemble (paper weights) | No balancing,8,67.8549,34.8196,36.0942
+Ensemble (paper weights) | No balancing,9,68.3552,34.9577,36.0361
+SVM | Review 1 (SVM + RF only),0,62.0388,28.3381,28.4566
+SVM | Review 1 (SVM + RF only),1,62.3515,27.5977,27.5761
+SVM | Review 1 (SVM + RF only),2,61.601,27.5773,27.5238
+SVM | Review 1 (SVM + RF only),3,62.2264,28.703,28.69
+SVM | Review 1 (SVM + RF only),4,61.9137,28.0587,28.125
+SVM | Review 1 (SVM + RF only),5,61.5385,27.892,27.8647
+SVM | Review 1 (SVM + RF only),6,61.601,27.574,27.5285
+SVM | Review 1 (SVM + RF only),7,61.7261,27.8025,27.6694
+SVM | Review 1 (SVM + RF only),8,62.2889,28.0425,28.1954
+SVM | Review 1 (SVM + RF only),9,62.2264,28.2996,28.3836
+RF | Review 1 (SVM + RF only),0,71.4196,36.4107,38.2207
+RF | Review 1 (SVM + RF only),1,71.4822,36.9193,38.6204
+RF | Review 1 (SVM + RF only),2,70.419,35.8939,37.5338
+RF | Review 1 (SVM + RF only),3,71.4822,36.855,38.5103
+RF | Review 1 (SVM + RF only),4,70.9193,36.3762,37.9178
+RF | Review 1 (SVM + RF only),5,71.6073,36.6603,38.4999
+RF | Review 1 (SVM + RF only),6,70.6692,36.387,38.0073
+RF | Review 1 (SVM + RF only),7,71.232,36.3405,38.0322
+RF | Review 1 (SVM + RF only),8,70.6066,36.3559,38.0264
+RF | Review 1 (SVM + RF only),9,70.4816,35.8492,37.4982
+MLP | Review 1 (SVM + RF only),0,61.7886,29.4109,29.2896
+MLP | Review 1 (SVM + RF only),1,60.2877,28.5963,28.4814
+MLP | Review 1 (SVM + RF only),2,61.2258,30.9895,32.1231
+MLP | Review 1 (SVM + RF only),3,61.0381,29.2012,29.1087
+MLP | Review 1 (SVM + RF only),4,61.3508,29.4537,29.44
+MLP | Review 1 (SVM + RF only),5,60.9756,29.0796,29.0283
+MLP | Review 1 (SVM + RF only),6,62.1639,29.8346,30.0548
+MLP | Review 1 (SVM + RF only),7,62.0388,31.5563,32.8743
+MLP | Review 1 (SVM + RF only),8,61.2258,29.7457,29.8877
+MLP | Review 1 (SVM + RF only),9,61.4134,29.5936,29.8243
+GradBoost | Review 1 (SVM + RF only),0,67.7298,35.5464,36.4109
+GradBoost | Review 1 (SVM + RF only),1,67.1044,35.9969,37.3637
+GradBoost | Review 1 (SVM + RF only),2,67.4797,35.1124,35.7685
+GradBoost | Review 1 (SVM + RF only),3,67.98,36.2356,37.5527
+GradBoost | Review 1 (SVM + RF only),4,67.8549,36.2823,37.5496
+GradBoost | Review 1 (SVM + RF only),5,68.0425,35.7247,37.0018
+GradBoost | Review 1 (SVM + RF only),6,66.7917,35.5796,36.7386
+GradBoost | Review 1 (SVM + RF only),7,68.7305,36.2971,37.4901
+GradBoost | Review 1 (SVM + RF only),8,67.167,35.0921,35.7425
+GradBoost | Review 1 (SVM + RF only),9,67.7924,35.0981,35.728
+Ensemble (paper weights) | Review 1 (SVM + RF only),0,69.6685,35.6265,37.2864
+Ensemble (paper weights) | Review 1 (SVM + RF only),1,68.7305,35.5971,37.1746
+Ensemble (paper weights) | Review 1 (SVM + RF only),2,68.2301,34.815,36.0148
+Ensemble (paper weights) | Review 1 (SVM + RF only),3,69.3558,35.9061,37.5119
+Ensemble (paper weights) | Review 1 (SVM + RF only),4,68.7305,35.2396,36.5102
+Ensemble (paper weights) | Review 1 (SVM + RF only),5,69.7936,35.962,37.5883
+Ensemble (paper weights) | Review 1 (SVM + RF only),6,68.7305,35.7058,37.1805
+Ensemble (paper weights) | Review 1 (SVM + RF only),7,69.1057,35.5133,36.8883
+Ensemble (paper weights) | Review 1 (SVM + RF only),8,68.8555,35.5734,36.6817
+Ensemble (paper weights) | Review 1 (SVM + RF only),9,68.9181,35.2455,36.3567
+"SVM | Class weights, all four",0,62.0388,28.3381,28.4566
+"SVM | Class weights, all four",1,62.3515,27.5977,27.5761
+"SVM | Class weights, all four",2,61.601,27.5773,27.5238
+"SVM | Class weights, all four",3,62.2264,28.703,28.69
+"SVM | Class weights, all four",4,61.9137,28.0587,28.125
+"SVM | Class weights, all four",5,61.5385,27.892,27.8647
+"SVM | Class weights, all four",6,61.601,27.574,27.5285
+"SVM | Class weights, all four",7,61.7261,27.8025,27.6694
+"SVM | Class weights, all four",8,62.2889,28.0425,28.1954
+"SVM | Class weights, all four",9,62.2264,28.2996,28.3836
+"RF | Class weights, all four",0,71.4196,36.4107,38.2207
+"RF | Class weights, all four",1,71.4822,36.9193,38.6204
+"RF | Class weights, all four",2,70.419,35.8939,37.5338
+"RF | Class weights, all four",3,71.4822,36.855,38.5103
+"RF | Class weights, all four",4,70.9193,36.3762,37.9178
+"RF | Class weights, all four",5,71.6073,36.6603,38.4999
+"RF | Class weights, all four",6,70.6692,36.387,38.0073
+"RF | Class weights, all four",7,71.232,36.3405,38.0322
+"RF | Class weights, all four",8,70.6066,36.3559,38.0264
+"RF | Class weights, all four",9,70.4816,35.8492,37.4982
+"MLP | Class weights, all four",0,44.5904,40.52,29.3497
+"MLP | Class weights, all four",1,44.4653,40.2156,28.9454
+"MLP | Class weights, all four",2,44.3402,38.069,28.7391
+"MLP | Class weights, all four",3,44.3402,39.7917,29.0501
+"MLP | Class weights, all four",4,44.6529,40.3405,29.0118
+"MLP | Class weights, all four",5,45.3408,40.8695,29.6849
+"MLP | Class weights, all four",6,43.965,38.7337,28.6013
+"MLP | Class weights, all four",7,44.9656,40.3205,29.3722
+"MLP | Class weights, all four",8,44.778,39.3649,28.9071
+"MLP | Class weights, all four",9,44.2777,37.2917,28.3945
+"GradBoost | Class weights, all four",0,65.1657,39.2167,39.4894
+"GradBoost | Class weights, all four",1,64.9781,38.4983,37.8974
+"GradBoost | Class weights, all four",2,64.7905,38.6348,38.4987
+"GradBoost | Class weights, all four",3,65.7286,37.6308,37.6964
+"GradBoost | Class weights, all four",4,65.7911,38.9603,38.8884
+"GradBoost | Class weights, all four",5,63.9775,36.6178,36.3672
+"GradBoost | Class weights, all four",6,65.2908,37.3969,37.422
+"GradBoost | Class weights, all four",7,65.4784,37.4273,37.1367
+"GradBoost | Class weights, all four",8,63.7899,36.9943,36.887
+"GradBoost | Class weights, all four",9,65.541,37.8342,37.5425
+"Ensemble (paper weights) | Class weights, all four",0,68.5428,37.8708,38.6986
+"Ensemble (paper weights) | Class weights, all four",1,68.1051,38.5246,39.3215
+"Ensemble (paper weights) | Class weights, all four",2,68.793,38.5685,39.8582
+"Ensemble (paper weights) | Class weights, all four",3,68.4178,37.4891,38.4347
+"Ensemble (paper weights) | Class weights, all four",4,69.0432,38.2064,39.1613
+"Ensemble (paper weights) | Class weights, all four",5,68.4803,37.6782,38.2973
+"Ensemble (paper weights) | Class weights, all four",6,67.98,37.7674,38.5825
+"Ensemble (paper weights) | Class weights, all four",7,68.7305,37.384,37.922
+"Ensemble (paper weights) | Class weights, all four",8,67.98,38.2042,38.9675
+"Ensemble (paper weights) | Class weights, all four",9,68.2301,37.6889,38.401
+SVM | SMOTE oversampling,0,55.2846,39.0223,34.3195
+SVM | SMOTE oversampling,1,54.7217,40.6809,35.0168
+SVM | SMOTE oversampling,2,55.0969,38.9542,34.4716
+SVM | SMOTE oversampling,3,54.8468,38.7937,34.2853
+SVM | SMOTE oversampling,4,54.6592,36.8676,33.0922
+SVM | SMOTE oversampling,5,54.6592,39.114,34.1295
+SVM | SMOTE oversampling,6,54.5341,39.8758,34.4609
+SVM | SMOTE oversampling,7,54.1588,38.526,33.9224
+SVM | SMOTE oversampling,8,55.6598,38.8642,34.5677
+SVM | SMOTE oversampling,9,54.409,38.8036,34.078
+RF | SMOTE oversampling,0,67.7924,41.5954,40.3882
+RF | SMOTE oversampling,1,68.1676,43.7685,42.5871
+RF | SMOTE oversampling,2,68.3552,41.959,40.7522
+RF | SMOTE oversampling,3,68.4178,42.3636,41.1669
+RF | SMOTE oversampling,4,68.3552,41.1534,40.0454
+RF | SMOTE oversampling,5,67.4171,43.5855,42.0878
+RF | SMOTE oversampling,6,67.7924,41.9879,40.7186
+RF | SMOTE oversampling,7,67.9174,41.086,40.1355
+RF | SMOTE oversampling,8,67.3546,41.6217,40.5139
+RF | SMOTE oversampling,9,67.7924,41.5302,40.4702
+MLP | SMOTE oversampling,0,55.3471,37.8588,34.5827
+MLP | SMOTE oversampling,1,54.6592,36.4965,33.4864
+MLP | SMOTE oversampling,2,54.9093,36.4205,33.7129
+MLP | SMOTE oversampling,3,54.3465,35.3159,32.9957
+MLP | SMOTE oversampling,4,55.0344,36.9912,34.2228
+MLP | SMOTE oversampling,5,56.035,39.3924,35.875
+MLP | SMOTE oversampling,6,54.7842,37.8462,34.4172
+MLP | SMOTE oversampling,7,54.4715,39.6328,35.7501
+MLP | SMOTE oversampling,8,55.6598,37.9011,34.9466
+MLP | SMOTE oversampling,9,52.9706,34.6976,32.013
+GradBoost | SMOTE oversampling,0,64.7905,40.151,39.0267
+GradBoost | SMOTE oversampling,1,63.5397,41.3465,39.5488
+GradBoost | SMOTE oversampling,2,62.7892,38.9942,37.6032
+GradBoost | SMOTE oversampling,3,63.2896,39.9011,38.165
+GradBoost | SMOTE oversampling,4,64.2276,39.1136,37.8064
+GradBoost | SMOTE oversampling,5,63.7899,38.0803,37.1348
+GradBoost | SMOTE oversampling,6,62.7892,39.162,37.7899
+GradBoost | SMOTE oversampling,7,63.8524,40.1169,38.7962
+GradBoost | SMOTE oversampling,8,61.601,38.8072,37.2571
+GradBoost | SMOTE oversampling,9,64.2276,38.3476,37.443
+Ensemble (paper weights) | SMOTE oversampling,0,64.9781,42.5911,40.1415
+Ensemble (paper weights) | SMOTE oversampling,1,62.8518,41.535,39.1718
+Ensemble (paper weights) | SMOTE oversampling,2,63.9775,41.3118,39.3056
+Ensemble (paper weights) | SMOTE oversampling,3,63.1645,40.1119,38.2559
+Ensemble (paper weights) | SMOTE oversampling,4,64.9156,42.097,40.1093
+Ensemble (paper weights) | SMOTE oversampling,5,64.1026,41.0257,39.0013
+Ensemble (paper weights) | SMOTE oversampling,6,64.04,42.9459,40.4161
+Ensemble (paper weights) | SMOTE oversampling,7,62.7892,40.1676,38.1906
+Ensemble (paper weights) | SMOTE oversampling,8,63.9775,40.9029,39.1505
+Ensemble (paper weights) | SMOTE oversampling,9,63.7899,41.7589,39.5402
+ExtraTrees,0,70.8568,36.0784,37.6082
+ExtraTrees,1,71.4196,37.1288,38.9179
+ExtraTrees,2,70.8568,36.3732,37.7851
+ExtraTrees,3,71.4822,36.8583,38.2813
+ExtraTrees,4,70.4816,36.1407,37.4911
+ExtraTrees,5,71.2946,36.3617,37.9078
+ExtraTrees,6,70.4816,36.2082,37.5413
+ExtraTrees,7,71.5447,37.0443,38.8444
+ExtraTrees,8,70.7317,36.2501,37.5958
+ExtraTrees,9,70.5441,36.0499,37.303
+HistGB,0,69.1057,36.6972,36.9169
+HistGB,1,69.9187,38.0154,39.1062
+HistGB,2,68.9181,36.5036,36.8401
+HistGB,3,69.1057,37.2144,37.6736
+HistGB,4,69.2933,36.9931,37.5014
+HistGB,5,68.5428,35.9269,36.6408
+HistGB,6,68.1676,37.0681,37.9542
+HistGB,7,68.793,37.5802,38.3606
+HistGB,8,68.4178,36.4082,37.0325
+HistGB,9,68.6679,36.1555,36.6837
+Paper weights: SVM + RF + ExtraTrees + HistGB,0,71.4822,37.4807,38.5699
+Paper weights: SVM + RF + ExtraTrees + HistGB,1,71.1695,37.1229,38.1354
+Paper weights: SVM + RF + ExtraTrees + HistGB,2,70.6066,36.84,37.9956
+Paper weights: SVM + RF + ExtraTrees + HistGB,3,70.9193,37.0727,38.0888
+Paper weights: SVM + RF + ExtraTrees + HistGB,4,70.5441,36.9127,38.0437
+Paper weights: SVM + RF + ExtraTrees + HistGB,5,70.2939,36.5118,37.6756
+Paper weights: SVM + RF + ExtraTrees + HistGB,6,70.6066,37.2255,38.6275
+Paper weights: SVM + RF + ExtraTrees + HistGB,7,71.2946,37.1158,38.3144
+Paper weights: SVM + RF + ExtraTrees + HistGB,8,70.9193,37.0612,38.0897
+Paper weights: SVM + RF + ExtraTrees + HistGB,9,70.0438,36.2443,36.8708
+Stacked: paper's 4 learners (class-weighted),0,71.5447,35.1787,35.161
+Stacked: paper's 4 learners (class-weighted),1,71.3571,35.4593,35.2497
+Stacked: paper's 4 learners (class-weighted),2,70.7317,34.7436,34.7676
+Stacked: paper's 4 learners (class-weighted),3,71.1069,35.1934,35.0785
+Stacked: paper's 4 learners (class-weighted),4,70.2939,34.8423,34.6755
+Stacked: paper's 4 learners (class-weighted),5,70.9193,34.9257,34.8484
+Stacked: paper's 4 learners (class-weighted),6,71.232,35.5718,35.695
+Stacked: paper's 4 learners (class-weighted),7,71.5447,35.4125,35.1742
+Stacked: paper's 4 learners (class-weighted),8,70.3565,34.5737,34.5511
+Stacked: paper's 4 learners (class-weighted),9,70.1063,34.4692,34.3892
+"Stacked: paper's 4 learners, balanced combiner",0,59.7874,50.049,37.6179
+"Stacked: paper's 4 learners, balanced combiner",1,59.7248,52.9467,38.768
+"Stacked: paper's 4 learners, balanced combiner",2,59.2245,53.0136,38.8374
+"Stacked: paper's 4 learners, balanced combiner",3,58.7242,51.119,37.9516
+"Stacked: paper's 4 learners, balanced combiner",4,59.5997,50.6381,38.282
+"Stacked: paper's 4 learners, balanced combiner",5,58.8493,49.2957,36.8912
+"Stacked: paper's 4 learners, balanced combiner",6,58.5991,47.6546,36.9759
+"Stacked: paper's 4 learners, balanced combiner",7,60.1001,49.9304,38.0782
+"Stacked: paper's 4 learners, balanced combiner",8,58.9118,47.5344,37.5744
+"Stacked: paper's 4 learners, balanced combiner",9,58.474,48.102,37.1955
+Stacked: SVM + RF + ExtraTrees + HistGB,0,70.7317,34.6186,34.9119
+Stacked: SVM + RF + ExtraTrees + HistGB,1,71.6698,35.6493,35.9306
+Stacked: SVM + RF + ExtraTrees + HistGB,2,70.9819,35.0309,35.0104
+Stacked: SVM + RF + ExtraTrees + HistGB,3,70.9193,34.8253,34.8003
+Stacked: SVM + RF + ExtraTrees + HistGB,4,70.9193,34.8631,34.8589
+Stacked: SVM + RF + ExtraTrees + HistGB,5,71.6073,34.9726,35.0639
+Stacked: SVM + RF + ExtraTrees + HistGB,6,70.9193,35.4513,35.9743
+Stacked: SVM + RF + ExtraTrees + HistGB,7,71.4822,35.0949,34.9411
+Stacked: SVM + RF + ExtraTrees + HistGB,8,70.0438,34.4052,34.4487
+Stacked: SVM + RF + ExtraTrees + HistGB,9,70.0438,34.2701,34.1773
+Learned-temperature ensemble | Review 1 (SVM + RF only),0,70.9193,36.4898,38.1789
+Learned-temperature ensemble | Review 1 (SVM + RF only),1,70.2939,36.7096,38.4979
+Learned-temperature ensemble | Review 1 (SVM + RF only),2,70.1689,36.0776,37.566
+Learned-temperature ensemble | Review 1 (SVM + RF only),3,71.7949,37.1437,38.5429
+Learned-temperature ensemble | Review 1 (SVM + RF only),4,71.0444,36.8831,38.4953
+Learned-temperature ensemble | Review 1 (SVM + RF only),5,72.045,37.0588,38.6274
+Learned-temperature ensemble | Review 1 (SVM + RF only),6,70.6692,36.5022,37.7464
+Learned-temperature ensemble | Review 1 (SVM + RF only),7,71.232,36.6155,38.2261
+Learned-temperature ensemble | Review 1 (SVM + RF only),8,70.1063,36.0284,37.3393
+Learned-temperature ensemble | Review 1 (SVM + RF only),9,70.6066,36.2917,37.5956
+Learned-temperature ensemble | SMOTE oversampling,0,67.9174,43.3162,41.5583
+Learned-temperature ensemble | SMOTE oversampling,1,65.4784,43.3074,41.1688
+Learned-temperature ensemble | SMOTE oversampling,2,66.7917,43.0275,41.5467
+Learned-temperature ensemble | SMOTE oversampling,3,66.7292,41.8413,40.201
+Learned-temperature ensemble | SMOTE oversampling,4,67.1044,42.2254,40.9827
+Learned-temperature ensemble | SMOTE oversampling,5,67.3546,41.7052,40.3918
+Learned-temperature ensemble | SMOTE oversampling,6,67.1044,44.4169,42.35
+Learned-temperature ensemble | SMOTE oversampling,7,65.8537,42.3521,40.8078
+Learned-temperature ensemble | SMOTE oversampling,8,66.2914,41.9632,40.6111
+Learned-temperature ensemble | SMOTE oversampling,9,65.666,40.7497,39.1475

@@ -1,0 +1,4 @@
+comparison,spearman_rank_agreement
+permutation (best model) vs permutation (RF),0.7364
+permutation (best model) vs MDI (RF),0.8909
+permutation (RF) vs MDI (RF),0.7636

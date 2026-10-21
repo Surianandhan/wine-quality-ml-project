@@ -1,0 +1,5 @@
+paper_attribute,our_rank_best_model,our_rank_rf,in_our_top4
+alcohol,1,1,True
+sulphates,2,2,True
+volatile acidity,3,3,True
+citric acid,6,5,False
