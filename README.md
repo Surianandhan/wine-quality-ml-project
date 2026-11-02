@@ -86,7 +86,10 @@ wine-quality-ml-project/
 │   ├── tables/, figures/         Review 1 (the reproduction) -- the baseline
 │   └── review2/                  Review 2 tables, figures and run log
 ├── app/                          Streamlit web app, its 15 checks, requirements.txt
-├── report/                       methodology.md, figures, and the scripts that build the report and paper
+├── report/                       the project report and conference paper (Word + PDF), methodology.md,
+│                                 figures, and the scripts that build them
+├── presentation/                 Review 1, Review 2 and final-review decks (+ PDF), speaker notes,
+│                                 FINAL_REVIEW_GUIDE.pdf, and the scripts that build them
 ├── HOW_TO_RUN.md                 step-by-step run guide
 ├── DEPLOY.md                     putting the web app online
 ├── run_all.py

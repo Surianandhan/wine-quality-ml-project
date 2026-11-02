@@ -331,6 +331,22 @@ of `README.md` and `report/methodology.md`. Run it after the deck.
 charts (slides 9 and 12) come out blank in Keynote. The Review-2 deck uses image charts only,
 so it looks the same everywhere.
 
+### The final-review deck and study guide
+
+```bash
+cd presentation
+node build_deck_final.js                                   # final_review.pptx
+APP_URL=https://<your-app>.streamlit.app node build_deck_final.js   # once the app is online
+```
+
+Like the Review-2 deck, every number is read from `results/` and the dataset, and every slide
+has speaker notes. It uses image charts only. `final_review.pdf` is a Keynote export
+(`osascript pptx2pdf.applescript …`), kept as the fallback for a college PC.
+
+`FINAL_REVIEW_GUIDE.md` (and its PDF) explains the whole project from zero, the code file by
+file, and likely panel questions. The PDF is made with pandoc and Chrome from
+`assets/guide.css`.
+
 ---
 
 ## 6b. Rebuilding the report and the conference paper

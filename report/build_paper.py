@@ -29,7 +29,7 @@ AUTHOR = "Surianandhan S"
 AFFIL = "SASTRA Deemed to be University, Thanjavur, Tamilnadu, India"
 EMAIL = "suria24aus@gmail.com"
 GUIDE = "Dr. Vidivelli S"
-APP = R.APP_URL or "[app link – added after deployment]"
+APP = R.APP_URL
 REPO = R.REPO_URL or "[GitHub link – added after deployment]"
 
 IND = dict(ind_left=284, ind_right=288)
@@ -247,7 +247,8 @@ class Paper:
                   "measurements with two models – the most accurate (Random Forest) and the best on the rare grades (Random Forest with "
                   "SMOTE) – showing the probability of every grade (Fig. [[f_app]]); a CSV file can be scored in bulk. It reuses the "
                   "project's own model definitions, and 15 automated checks confirm that its models and numbers match the experiments. "
-                  f"It is deployed on Streamlit Community Cloud at {APP}.")
+                  + (f"It is deployed on Streamlit Community Cloud at {APP}." if APP else
+                     "It runs locally or on Streamlit Community Cloud directly from the GitHub repository."))
         self.figure("f_app", FIG / "app" / "parts" / "app_predict_1of1.png", "Web application: the grade of a wine predicted by both models", 4.8)
 
         # 4

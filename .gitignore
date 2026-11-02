@@ -32,8 +32,5 @@ paper/*.pdf
 # Page-number preview renders of the report and paper (rebuilt by --pages / --render)
 report/data/*_render.pdf
 
-# Kept locally, not published: the review decks and personal briefing notes, and the
-# generated report and paper (rebuilt from report/ by build_report.py / build_paper.py).
-presentation/
-report/*.docx
-report/*.pdf
+# Intermediate HTML of the study guide (FINAL_REVIEW_GUIDE.pdf is the published copy)
+presentation/assets/guide.html

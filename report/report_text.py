@@ -21,14 +21,17 @@ STUDENT = "Surianandhan S"
 REG = "127018060"
 PROGRAMME = "B. Tech Computer Science and Business Systems"
 TITLE = "Wine Quality Prediction Using a Weighted Ensemble: Reproduction, Class Balancing and Feature Importance"
-MONTH = "October 2026"
+VIVA_DATE = "2<sup>nd</sup> November 2026"
 YEAR = "2026-27"
 GUIDE = "Dr. Vidivelli S"
 GUIDE_ROLE = "Assistant Professor–II, School of Computing"
 
 f2, pct = R.f2, R.pct
-APP = R.APP_URL or "[app link – added after deployment]"
+APP = R.APP_URL
 REPO = R.REPO_URL or "[GitHub link – added after deployment]"
+APP_SENTENCE = (f"It is published at {APP} and its source code is available at {REPO}." if APP else
+                f"Its source code is available at {REPO}, from which it runs locally or on Streamlit Community Cloud "
+                "(Section [[s_deploy]]).")
 
 
 def g(name, col):
@@ -52,7 +55,6 @@ def front_matter(r):
     d.p(run("Submitted by", i=True, sz=28), ppr(before=1000, after=0, line=240, jc="center"))
     d.p(run(STUDENT, b=True, sz=28), ppr(before=280, after=40, line=240, jc="center"))
     d.p(run(f"(Reg. No.: {REG}, {PROGRAMME})", b=True, sz=26), ppr(after=0, line=240, jc="center"))
-    d.p(run(MONTH, b=True, sz=28), ppr(before=800, after=0, line=240, jc="center"))
     d.section_break(r.sect_title)
 
     # -- bonafide certificate --
@@ -72,7 +74,7 @@ def front_matter(r):
     d.p(run("Signature of Project Supervisor", b=True) + run("\t:  "), sig)
     d.p(run("Name with Affiliation", b=True) + run("\t") + run(f":  {GUIDE}, {GUIDE_ROLE}"), sig)
     d.p(run("Date", b=True) + run("\t:  "), sig)
-    d.p(run("Project ") + run("Viva voce", i=True) + run(" held on ____________________"), ppr(before=480, after=1200, line=240))
+    d.p(run("Project ") + run("Viva voce", i=True) + md(" held on " + VIVA_DATE), ppr(before=480, after=1200, line=240))
     d.p(run("Examiner 1", b=True) + run("\t") + run("Examiner 2", b=True), ppr(tabs=[("right", 9749)], line=240))
     d.page_break()
 
@@ -378,7 +380,8 @@ def chapter1(r):
         "the ELM, because recurrent networks and extreme learning machines are outside the classical machine-learning scope of the course.",
         "**Evaluation:** stratified 10-fold cross-validation × 10 repeats (100 fold-runs), with scaling inside each training fold.",
         "**Review 2:** class balancing, improvement of the result and feature importance, each evaluated with the same protocol.",
-        f"**Deployment:** a Streamlit web application, published at {APP}.",
+        "**Deployment:** a Streamlit web application" + (f", published at {APP}." if APP else
+                                                          ", run locally or deployed on Streamlit Community Cloud from the GitHub repository."),
     ])
 
 
@@ -918,7 +921,7 @@ def chapter5(r):
     r.para("The analysis lives in Python modules and result files, which is convenient for development but not for a reviewer or a "
            "wine buyer. The project therefore includes an interactive web application built with Streamlit {c:streamlit2026} and Altair "
            "charts {c:vanderplas2018}. It presents every result of the project and predicts the quality of new wines without any "
-           f"programming. It is published at {APP} and its source code is available at {REPO}. Its goals are to:")
+           f"programming. {APP_SENTENCE} Its goals are to:")
     r.bullets([
         "**explore** the dataset, the reproduction, the class-balancing experiment, the improvements and the feature importance with charts and tables;",
         "**predict** the quality grade of a wine from its 11 measurements with two models: the most accurate (Random Forest) and the best on the rare grades (Random Forest with SMOTE);",
@@ -996,9 +999,11 @@ def chapter5(r):
              ["4. Numbers", "2", "the reproduction accuracy shown is 69.01 % and the best macro-F1 model is RF + SMOTE, as in the result files"]],
             [1872, 1152, 6624], align=["left", "center", "left"])
 
-    r.h2("Deployment")
-    r.para("The project is version-controlled in a public GitHub repository (Table [[t_repo]]) and the application is hosted on Streamlit "
-           "Community Cloud, which installs the pinned app/requirements.txt with Python 3.11 and redeploys after every push. The base paper's "
+    r.h2("Deployment", key="s_deploy")
+    hosting = (f"the application is hosted on Streamlit Community Cloud at {APP}, which" if APP else
+               "the application is ready for Streamlit Community Cloud (the steps are in DEPLOY.md), which")
+    r.para("The project is version-controlled in a public GitHub repository (Table [[t_repo]]) and " + hosting + " installs the pinned "
+           "app/requirements.txt with Python 3.11 and redeploys after every push. The base paper's "
            "PDF is excluded from the repository by .gitignore because it is a copyrighted article. The application can also be run locally "
            "with the command streamlit run app/streamlit_app.py. On the free tier the application sleeps after a period without visitors "
            "and wakes up in about a minute.")
@@ -1010,7 +1015,8 @@ def chapter5(r):
              ["data/raw/", "the UCI red- and white-wine files"],
              ["results/", "tables/ and figures/ of Review 1; review2/tables and review2/figures of Review 2"],
              ["notebooks/", "a Google Colab notebook that runs the whole project"],
-             ["report/", "methodology.md, the report's figures and the scripts that build this report and the conference paper"],
+             ["report/", "this report and the conference paper (Word and PDF), methodology.md, the figures and the scripts that build them"],
+             ["presentation/", "the three review decks with speaker notes, the study guide and the scripts that build them"],
              ["README.md, HOW_TO_RUN.md, DEPLOY.md", "overview, running instructions and deployment steps"]],
             [2880, 6768], sz=19)
 
